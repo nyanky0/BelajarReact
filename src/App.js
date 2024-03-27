@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import Deskripsi from './component/dumb/Deskripsi';
-import Input from './component/screen/Input';
 import React, { Component } from 'react';
-
+import Deskripsi from './component/dumb/Deskripsi';
 class App extends Component {
 
   constructor(props){
     super(props);
+    this.state = {
+      name : '',
+    }
+    
+    //this.setName = this.setName.bind(this)
   }
-
+  //e=event
+  setName = (e) => {
+    let name = e.target.value
+    this.setState({
+      name : name
+    })
+    console.log(name);
+  }
+  //setAlamat (){}
   render(){
   return (
     <div>
-      <Deskripsi name="Naeta"></Deskripsi>
-      <Deskripsi name="Naeta2"></Deskripsi>
-      <Input
-        name = "agit"
-        alamat = "Indonesia"
-        //a = "a"
-      />
+      <h1>{this.state.name}</h1>
+      <input onChange = {this.setName} />
+      <Deskripsi name={this.state.name}></Deskripsi>
     </div>
   );
   }
