@@ -11,7 +11,7 @@ class App extends Component {
       stillType: '',
     }
     //kalau gapakai arrow function this.setStillType = this.setStillType.bind(this)
-    //this.setName = this.setName.bind(this)
+    //this.setName = this.setName.bind(this) facebook.github.io/react-native/movies.json
   }
   //e=event
   setName = (e) => {
